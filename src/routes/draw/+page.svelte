@@ -94,5 +94,13 @@
       {/each}
     {/each}
   </div>
-  <button on:click={handleBeginDrawing} class="rounded-2xl w-60 h-20 bg-green-400 p-2 mt-10 text-white text-3xl font-['Fredoka'] hover:bg-green-500 transition-colors flex items-center justify-center no-underline">Begin!</button>
+  <button 
+    on:click={handleBeginDrawing} 
+    class="rounded-2xl w-60 h-20 bg-green-400 mt-10 p-2 text-white text-4xl font-['Fredoka']
+    hover:bg-green-500 hover:translate-y-[4px] hover:shadow-[0_4px_0_rgb(22,163,74)]
+    active:translate-y-[4px] active:shadow-[0_4px_0_rgb(22,163,74)]
+    transition-all shadow-[0_8px_0_rgb(22,163,74)]
+    flex items-center justify-center no-underline">
+    Begin!
+  </button>
 </div>

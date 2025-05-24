@@ -74,10 +74,22 @@
     {/if}
   </div>
   <div class="flex flex-row gap-4">
-    <button on:click={handlePlayAgain} class="rounded-2xl w-60 h-20 bg-green-500 p-2 mt-10 text-white text-3xl font-['Fredoka'] hover:bg-green-600 transition-colors flex items-center justify-center no-underline">
+    <button 
+      on:click={handlePlayAgain} 
+      class="rounded-2xl w-60 h-20 bg-green-400 p-2 mt-10 text-white text-4xl font-['Fredoka']
+      hover:bg-green-500 hover:translate-y-[4px] hover:shadow-[0_4px_0_rgb(22,163,74)]
+      active:translate-y-[4px] active:shadow-[0_4px_0_rgb(22,163,74)]
+      transition-all shadow-[0_8px_0_rgb(22,163,74)]
+      flex items-center justify-center no-underline">
       Play Again!
     </button>
-    <button on:click={toggleOriginals} class="rounded-2xl w-60 h-20 bg-blue-400 p-2 mt-10 text-white text-3xl font-['Fredoka'] hover:bg-blue-600 transition-colors flex items-center justify-center no-underline">
+    <button 
+      on:click={toggleOriginals} 
+      class="rounded-2xl w-60 h-20 bg-blue-400 p-2 mt-10 text-white text-4xl font-['Fredoka']
+      hover:bg-blue-500 hover:translate-y-[4px] hover:shadow-[0_4px_0_rgb(37,99,235)]
+      active:translate-y-[4px] active:shadow-[0_4px_0_rgb(37,99,235)]
+      transition-all shadow-[0_8px_0_rgb(37,99,235)]
+      flex items-center justify-center no-underline">
       {showOriginals ? 'See Yours' : 'See Originals'}
     </button>
   </div>
