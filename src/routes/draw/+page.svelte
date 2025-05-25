@@ -66,6 +66,10 @@
   <div class="grid grid-cols-4 bg-white rounded-lg shadow-xl divide-x-2 divide-y-2 divide-amber-300 overflow-hidden">
     {#each localChosenPokemons as pokemon, i (pokemon.id)}
       <div class="relative w-64 h-64 cursor-pointer hover:bg-amber-50 transition-colors group">
+        <!-- Add number indicator -->
+        <div class="absolute top-2 right-2 w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center">
+          <span class="text-2xl font-['Fredoka'] text-white">{i + 1}</span>
+        </div>
         <img
           class="w-full h-full object-contain "
           style="image-rendering: pixelated;"
