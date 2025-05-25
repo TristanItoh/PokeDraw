@@ -9,7 +9,7 @@
    PokeDraw
   </h1>
   <h2 class="text-4xl text-amber-500 font-['Fredoka'] select-none mb-12">
-  Test your memory with Pokémon!
+  Draw your Pokedex, Test your memory!
   </h2>
 
   <a href="/draw" class="rounded-2xl w-60 h-20 bg-amber-400 p-2 text-white text-4xl font-['Fredoka'] 

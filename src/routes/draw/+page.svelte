@@ -62,7 +62,7 @@
 <!-- Background elements were here, now they are global -->
 
 <div class="flex flex-col items-center justify-center min-h-screen p-8">
-  <h1 class="text-6xl font-bold font-['Fredoka'] text-amber-600 mb-12 select-none">Your Pokemon:</h1>
+  <h1 class="text-6xl font-bold font-['Fredoka'] text-amber-600 mb-12 select-none">Your Pokedex:</h1>
   <div class="grid grid-cols-4 bg-white rounded-lg shadow-xl divide-x-2 divide-y-2 divide-amber-300 overflow-hidden">
     {#each localChosenPokemons as pokemon, i (pokemon.id)}
       <div class="relative w-64 h-64 cursor-pointer hover:bg-amber-50 transition-colors group">

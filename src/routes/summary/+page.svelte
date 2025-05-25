@@ -36,7 +36,7 @@
 
 <div class="flex flex-col items-center justify-center min-h-screen p-8">
   <h1 class="text-6xl font-bold font-['Fredoka'] text-amber-600 mb-12 select-none">
-    {showOriginals ? 'Original Pokémon:' : 'Your Drawings:'}
+    {showOriginals ? 'Original Pokedex:' : 'Your Drawings:'}
   </h1>
   <div class="grid grid-cols-4 bg-white rounded-lg shadow-xl divide-x-2 divide-y-2 divide-amber-300 overflow-hidden">
     {#if showOriginals}
