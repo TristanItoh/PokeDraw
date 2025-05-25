@@ -24,6 +24,12 @@
   let canvasComponent;
   let currentColor = '#2c3e50'; // Default color
 
+  let currentTool = 'brush';
+  const tools = [
+    { value: 'brush', icon: '🖌️' },
+    { value: 'bucket', icon: '🪣' }
+  ];
+
   const colors = [
     { name: 'Black', value: '#2c3e50' },
     { name: 'Red', value: '#e74c3c' },
@@ -167,15 +173,50 @@
       <h1 class="text-6xl font-bold font-['Fredoka'] text-amber-600 mb-8 capitalize mt-14">
         Draw: {currentPokemon.name}!
       </h1>
-      <div class="w-[400px] h-[400px] border-4 border-amber-400 rounded-lg shadow-xl mb-4 overflow-hidden">
-        <SimpleDrawingCanvas 
-          bind:this={canvasComponent} 
-          width={492} 
-          height={392} 
-          brushColor={currentColor}
-          brushSize={8}
-        />
+      <div class="flex gap-4 mb-8">
+        <!-- Tools sidebar -->
+        <div class="flex flex-col gap-2">
+          {#each tools as tool}
+            <button
+              class="w-12 h-12 rounded-lg shadow-md transition-all text-xl {currentTool === tool.value ? 'bg-amber-400 text-white' : 'bg-white text-amber-600'} hover:bg-amber-300 flex items-center justify-center"
+              on:click={() => currentTool = tool.value}
+              title={tool.value}
+            >
+              {tool.icon}
+            </button>
+          {/each}
+          
+          <!-- Add undo/redo buttons -->
+          <button
+            class="w-12 h-12 rounded-lg shadow-md transition-all text-xl bg-white text-amber-600 hover:bg-amber-300 flex items-center justify-center"
+            on:click={() => canvasComponent.controls.undo()}
+            title="Undo (Ctrl+Z)"
+          >
+            ↩️
+          </button>
+          <button
+            class="w-12 h-12 rounded-lg shadow-md transition-all text-xl bg-white text-amber-600 hover:bg-amber-300 flex items-center justify-center"
+            on:click={() => canvasComponent.controls.redo()}
+            title="Redo (Ctrl+Y or Ctrl+Shift+Z)"
+          >
+            ↪️
+          </button>
+        </div>
+
+        <!-- Canvas -->
+        <div class="w-[400px] h-[400px] border-4 border-amber-400 rounded-lg shadow-xl overflow-hidden">
+          <SimpleDrawingCanvas 
+            bind:this={canvasComponent} 
+            width={492} 
+            height={392} 
+            brushColor={currentColor}
+            brushSize={8}
+            {currentTool}
+          />
+        </div>
       </div>
+
+      <!-- Colors remain below -->
       <div class="flex gap-2 justify-center mb-8">
         {#each colors as color}
           <button
@@ -190,4 +231,4 @@
   {:else}
     <p class="text-2xl text-gray-500">Loading Pokémon data...</p>
   {/if}
-</div> 
+</div>
