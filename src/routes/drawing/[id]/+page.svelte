@@ -214,18 +214,18 @@
             {currentTool}
           />
         </div>
-      </div>
 
-      <!-- Colors remain below -->
-      <div class="flex gap-2 justify-center mb-8">
-        {#each colors as color}
-          <button
-            class="w-10 h-10 rounded-full shadow-md transition-transform hover:scale-110 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400"
-            style="background-color: {color.value}; {currentColor === color.value ? 'transform: scale(1.1);' : ''}"
-            on:click={() => currentColor = color.value}
-            title={color.name}
-          />
-        {/each}
+        <!-- Colors moved to right side -->
+        <div class="grid grid-cols-2 gap-2 p-2 gap-x-4">
+          {#each colors as color}
+            <button
+              class="w-12 h-12 rounded-full shadow-md transition-transform hover:scale-110 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400"
+              style="background-color: {color.value}; {currentColor === color.value ? 'transform: scale(1.1);' : ''}"
+              on:click={() => currentColor = color.value}
+              title={color.name}
+            />
+          {/each}
+        </div>
       </div>
     {/if}
   {:else}
